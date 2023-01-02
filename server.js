@@ -7,6 +7,8 @@ const sectorRoutes = require("./routes/Sectors");
 //invoking express
 const app = express();
 
+const cors = require("cors");
+
 // middleware
 app.use(express.json());
 
@@ -14,6 +16,10 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+
+//enabling cors
+
+app.use(cors());
 
 //routes
 
